@@ -29,5 +29,3 @@ It is designed to make learning more interactive and fun by quickly transforming
 
 ## 🌏Live Demo
 https://bhartenduji.github.io/Skill-Cred-Project-2/ 
-git clone https://github.com/your-username/nexq.git
-cd nexq
