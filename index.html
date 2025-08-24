@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF to Quiz Generator</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PDF.js (v2.11.338 to match your original) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+
+  <!-- jsPDF UMD -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 NexQ </h1>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="upload-section" id="drop-zone">
+        <p><strong>Drag & Drop</strong> your PDF here or click below:</p>
+        <input id="pdf-upload" type="file" accept="application/pdf" />
+      </div>
+
+      <div class="options-bar">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">🟢 Easy</option>
+          <option value="medium" selected>🟡 Medium</option>
+          <option value="hard">🔴 Hard</option>
+        </select>
+
+        <label for="num-mcq">MCQ:</label>
+        <input id="num-mcq" type="number" min="0" max="50" value="10" />
+
+        <label for="num-tf">True/False:</label>
+        <input id="num-tf" type="number" min="0" max="50" value="10" />
+      </div>
+
+      <div class="button-bar">
+        <button id="generate-quiz-btn">⚡ Generate Quiz</button>
+        <button id="submit-answers-btn" class="outline">✅ Submit Answers</button>
+        <button id="export-pdf-btn" class="outline">📤 Export PDF</button>
+      </div>
+    </div>
+
+    <div id="summary" class="summary hidden"></div>
+    <div id="quiz-container" class="hidden">
+      <form id="quiz-form"></form>
+    </div>
+  </div>
+
+  <!-- App logic -->
+  <script src="script.js"></script>
+</body>
+</html>
